@@ -24,15 +24,12 @@
                                         <td>{{$user->email}}</td>
                                         <td>{{date("d.m.Y", strtotime($user->created_at)) }}</td>
                                         <td>
-                                            <!--<a href="" title="Удалить"><span class="glyphicon glyphicon-trash"></span></a>-->
                                             <form action="users/{{$user->id}}" method="post">
                                                 <input type="hidden" name="_method" value="delete">
                                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                                 <input type="submit" name="name" value="Удалить">
                                             </form>
-
-                                            <a href="users/ban/{{$user->id}}" title="Заблокировать"><span class="glyphicon glyphicon-ban-circle"></span></a>
-
+                                            <a href="{{route('user.ban',['user'=>$user->id])}}" title="Заблокировать"><span class="glyphicon glyphicon-ban-circle"></span></a>
                                         </td>
                                     </tr>
                                 @endforeach

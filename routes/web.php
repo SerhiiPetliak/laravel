@@ -18,8 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/profile', 'ProfileController@index');
 
 //Route::get('/users', 'UsersController@index');
-Route::get('users/ban/{user}', 'UsersController@ban');
+//Route::get('users/ban/{user}', 'UsersController@ban');
+Route::get('users/ban/{user}', ['uses'=>'UsersController@ban','as'=>'user.ban']);
 
 Route::resource('users', 'UsersController');

@@ -84,7 +84,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
         $user->delete();
 
         // redirect
@@ -92,7 +92,7 @@ class UsersController extends Controller
     }
     public function ban($id)
     {
-        $user = User::find(9);
+        $user = User::findOrFail($id);
         $user->is_blocked = 1;
         $user->save();
         return "User with ID".$id." is blocked";
