@@ -90,4 +90,11 @@ class UsersController extends Controller
         // redirect
         return redirect('/users');
     }
+    public function ban($id)
+    {
+        $user = User::find(9);
+        $user->is_blocked = 1;
+        $user->save();
+        return "User with ID".$id." is blocked";
+    }
 }

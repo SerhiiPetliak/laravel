@@ -20,5 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 //Route::get('/users', 'UsersController@index');
+Route::get('users/ban/{user}', 'UsersController@ban');
 
 Route::resource('users', 'UsersController');

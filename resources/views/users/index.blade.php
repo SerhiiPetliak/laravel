@@ -30,7 +30,8 @@
                                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                                 <input type="submit" name="name" value="Удалить">
                                             </form>
-                                            <a href="" title="Заблокировать"><span class="glyphicon glyphicon-ban-circle"></span></a>
+
+                                            <a href="users/ban/{{$user->id}}" title="Заблокировать"><span class="glyphicon glyphicon-ban-circle"></span></a>
 
                                         </td>
                                     </tr>
